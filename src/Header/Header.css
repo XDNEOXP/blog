@@ -1,0 +1,9 @@
+.navbar.navbar-dark.bg-dark{
+    padding: 1rem;
+}
+
+.navbar__icon{
+    padding: 2px;
+    font-size: 20px;
+    margin-bottom: auto;
+}
