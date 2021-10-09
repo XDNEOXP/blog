@@ -1,0 +1,12 @@
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+    padding: 15px;
+    box-shadow: 0 0 10px 0 rgba(51, 51, 51, 0.774);
+}
+
+.navbar-brand__icon{
+    font-size: 2rem;
+}
+
+.nav-item{
+    margin-left: 12px;
+}

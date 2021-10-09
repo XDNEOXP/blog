@@ -1,18 +1,10 @@
 import React from 'react';
-import LoadingButton from '@mui/lab/LoadingButton';
+import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
 import './Button.css';
 
 const ButtonComponent = ({ children, handelClick = () => {} }) => (
-  <LoadingButton
-    onClick={handleClick}
-    endIcon={<SendIcon />}
-    loading={loading}
-    loadingPosition="end"
-    variant="contained"
-  >
-    Send
-  </LoadingButton>
+  <Button onClick={handelClick} variant="contained" color="primary">{children}</Button>
 );
 
 ButtonComponent.propTypes = {

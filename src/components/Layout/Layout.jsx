@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Header/Header';
@@ -12,7 +13,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.elementType.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default Layout;
