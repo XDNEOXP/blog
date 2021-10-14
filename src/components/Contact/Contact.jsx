@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
 import Button from '../Button/Button';
 import { validateUsername, validateSubject, validateDescription } from '../../utils/validation';
 import './Contact.css';
 import BackdropComponent from '../Backdrop/Backdrop';
 import { ErrorAlert, SuccessAlert } from '../Alerts/Alerts';
-import { TextFieldComponent, MultilineTextFieldComponent } from '../TextField/TextField';
 
 const Contact = () => {
   const [subject, setSubject] = useState(null);
@@ -85,46 +85,64 @@ const Contact = () => {
     setTimeout(() => {
       setOpen(false);
       if (subject !== null && userName !== null && description !== null) {
-        setShowAlert(!showAlert);
+        setShowAlert(true);
+      } else {
+        setShowAlert(false);
       }
     }, 2000);
   };
 
   return (
-    <div className="contact">
-      <div className="contact__formcontrol">
-        <TextFieldComponent handelChange={handelChangeInputSubject} label="Subject" error={!!errors.subject} />
-        {errors.subject && <span><ErrorAlert>{errors.subject}</ErrorAlert></span>}
-      </div>
-      <div className="contact__formcontrol">
-        <TextFieldComponent handelChange={handelChangeInputUserName} label="Username" error={!!errors.username} />
-        {errors.username && <span><ErrorAlert>{errors.username}</ErrorAlert></span>}
-      </div>
-      <div className="contact__formcontrol">
-        <MultilineTextFieldComponent
-          handelChange={handelChangeTextArea}
-          id="filled-multiline-static"
-          label="Your Request Here"
-          error={!!errors.description}
-        />
-        {errors.description && <span><ErrorAlert>{errors.description}</ErrorAlert></span>}
-      </div>
-      <div className="contact__formcontrol">
-        <Button handelClick={handelSubmit}>
-          Submit
-        </Button>
-        <BackdropComponent open={open} />
-        {showAlert
-          ? (
-            <SuccessAlert>
-              Thanks For Contacting Us
-              {' '}
-              {userName}
-            </SuccessAlert>
-          )
-          : ''}
-      </div>
-    </div>
+    <>
+      <Form>
+        <Form.Group className="form__formgroup" controlId="exampleForm.ControlInput1">
+          <Form.Label>Subject</Form.Label>
+          <Form.Control
+            type="text"
+            onChange={handelChangeInputSubject}
+            placeholder=""
+            isInvalid={errors.subject}
+          />
+          {errors.subject && <span><ErrorAlert>{errors.subject}</ErrorAlert></span>}
+        </Form.Group>
+        <Form.Group className="form__formgroup" controlId="exampleForm.ControlInput1">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="text"
+            onChange={handelChangeInputUserName}
+            placeholder=""
+            isInvalid={errors.username}
+          />
+          {errors.username && <span><ErrorAlert>{errors.username}</ErrorAlert></span>}
+        </Form.Group>
+        <Form.Group className="form__formgroup" controlId="exampleForm.ControlTextarea1">
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            onChange={handelChangeTextArea}
+            as="textarea"
+            rows={4}
+            isInvalid={errors.description}
+          />
+          {errors.description && <span><ErrorAlert>{errors.description}</ErrorAlert></span>}
+        </Form.Group>
+        <Form.Group className="form__formgroup" controlId="exampleForm.ControlTextarea1">
+          <Button handelClick={handelSubmit}>
+            Submit
+          </Button>
+        </Form.Group>
+      </Form>
+
+      <BackdropComponent open={open} />
+      {showAlert
+        ? (
+          <SuccessAlert handelClose={() => setShowAlert(false)}>
+            Thanks For Contacting Us
+            {' '}
+            {userName}
+          </SuccessAlert>
+        )
+        : ''}
+    </>
   );
 };
 

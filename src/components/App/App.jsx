@@ -10,7 +10,7 @@ import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Content from '../Content/Content';
 import '../Button/Button.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

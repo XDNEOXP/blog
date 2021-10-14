@@ -1,7 +1,4 @@
-.contact{
-    padding: 10px;
-}
-
-.contact__formcontrol{
+.form__formgroup{
     margin: 7%;
+    width: 20rem;
 }

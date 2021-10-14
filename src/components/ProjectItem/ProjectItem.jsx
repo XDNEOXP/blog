@@ -1,37 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Card, Col } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 const ProjectItem = ({ data }) => (
-  <Card className="content-box__card" sx={{ maxWidth: 345 }}>
-    <CardActionArea>
-      <CardMedia
-        component="img"
-        height="140"
-        image={data.image}
-        alt="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {data.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {data.description}
-        </Typography>
-      </CardContent>
-    </CardActionArea>
-    <CardActions>
-      <a href="/#!">
-        <Button size="small" color="primary">
-          View
-        </Button>
-      </a>
-    </CardActions>
-  </Card>
+  <Col>
+    <Card className="h-100">
+      <Card.Img variant="top" src={data.image} />
+      <Card.Body>
+        <Card.Title className="mt-4">{data.title}</Card.Title>
+        <Card.Text>{data.description}</Card.Text>
+      </Card.Body>
+      <Link to={`/projects/${data.id}`}>
+        <Button className="btn btn-primary px-3 ms-3 mb-3" variant="primary">View</Button>
+      </Link>
+    </Card>
+  </Col>
 );
 
 ProjectItem.propTypes = {

@@ -1,13 +1,13 @@
 import React from 'react';
-import Alert from '@mui/material/Alert';
+import Alert from 'react-bootstrap/Alert';
 import PropTypes from 'prop-types';
 
 const ErrorAlert = ({ children }) => (
-  <Alert severity="error">{children}</Alert>
+  <Alert variant="danger">{children}</Alert>
 );
 
-const SuccessAlert = ({ children }) => (
-  <Alert severity="success">{children}</Alert>
+const SuccessAlert = ({ children, handelClose }) => (
+  <Alert variant="success" dismissible onClose={handelClose}>{children}</Alert>
 );
 
 ErrorAlert.propTypes = {
@@ -15,6 +15,7 @@ ErrorAlert.propTypes = {
 };
 
 SuccessAlert.propTypes = {
+  handelClose: PropTypes.func.isRequired,
   children: PropTypes.shape([]),
 };
 

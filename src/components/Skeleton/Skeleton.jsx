@@ -13,7 +13,7 @@ const SkeletonComponent = (props) => {
         <Grid container wrap="wrap">
           {[1, 2, 3, 4, 5, 6].map((index) => (
             <Box sx={{ width: 320, marginLeft: 10, my: 5 }} key={index}>
-              <Skeleton variant="rectangular" width={320} height={118} />
+              <Skeleton animation="wave" variant="rectangular" width={320} height={118} />
               <Box sx={{ pt: 3.5 }}>
                 <Skeleton />
                 <Skeleton width="60%" />
