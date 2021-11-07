@@ -11,7 +11,7 @@ const Slideshow = () => (
         imgAlt="First slide"
       />
       <Carousel.Caption>
-        <h3>First slide label</h3>
+        <h3>First slide </h3>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -21,7 +21,7 @@ const Slideshow = () => (
         imgAlt="Second slide"
       />
       <Carousel.Caption>
-        <h3>Second slide label</h3>
+        <h3>Second slide </h3>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -31,7 +31,7 @@ const Slideshow = () => (
         imgAlt="First slide"
       />
       <Carousel.Caption>
-        <h3>Third slide label</h3>
+        <h3>Third slide </h3>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>

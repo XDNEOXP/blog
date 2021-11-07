@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Image = ({ imgSrc, imgAlt, imgClassName }) => (
-  <img
-    className={imgClassName}
-    src={imgSrc}
-    alt={imgAlt}
-  />
+  <img src={imgSrc} alt={imgAlt} className={imgClassName} />
 );
 
 Image.propTypes = {

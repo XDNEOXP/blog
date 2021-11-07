@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { TiSocialInstagram, TiSocialTwitter } from 'react-icons/ti';
 import './About.css';
+import Button from '../Button/Button';
 
 const About = () => (
   <div className="container mt-5 mb-5">
@@ -40,7 +41,7 @@ const About = () => (
             <div className="buttons">
               <a target="_blank" href="https://www.wa.me/09100342630" className="btn btn-outline-primary px-4" rel="noreferrer">Message</a>
               <Link to="/contact">
-                <button type="button" className="btn btn-primary px-4 ms-3">Contact</button>
+                <Button variant="primary" className="px-4 ms-3">Contact</Button>
               </Link>
             </div>
           </div>

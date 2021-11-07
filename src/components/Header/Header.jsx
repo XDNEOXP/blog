@@ -4,9 +4,12 @@ import { IoLogoWebComponent } from 'react-icons/io5';
 import {
   Container, Navbar, Nav,
 } from 'react-bootstrap';
+import Bookmarks from '../Bookmarks/Bookmarks';
+import Dropdown from '../Dropdown/Dropdown';
+import Settings from '../Settings/Setting';
 
 const Header = () => (
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Navbar className="sticky-top shadow-lg" collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
       <Link to="/">
         <Navbar.Brand><IoLogoWebComponent /></Navbar.Brand>
@@ -14,15 +17,19 @@ const Header = () => (
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Link to="/" className="nav-link">
+          <Link to="/" className="btn btn-dark nav-link mx-2 mt-1">
             Home
           </Link>
-          <Link className="nav-link" to="/about">
+          <Link to="/about" className="btn btn-dark nav-link mx-2 mt-1">
             About
           </Link>
-          <Link className="nav-link" to="/contact">
+          <Link to="/contact" className="btn btn-dark nav-link mx-2 mt-1">
             Contact
           </Link>
+          <Dropdown>
+            <Bookmarks />
+            <Settings />
+          </Dropdown>
         </Nav>
       </Navbar.Collapse>
     </Container>

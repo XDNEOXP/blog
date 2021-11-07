@@ -12,7 +12,7 @@ const Projects = () => {
   const loadData = async () => {
     if (!cancelled) {
       setLoading(true);
-      const responesData = await fetch('https://run.mocky.io/v3/5336ddc8-72b1-4126-8fd8-51057e02753a');
+      const responesData = await fetch('https://run.mocky.io/v3/8e7ad3a2-9754-4d94-b398-f749d9e250b6');
       const getData = await responesData.json();
       setData(getData);
       setLoading(false);

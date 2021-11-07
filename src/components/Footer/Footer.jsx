@@ -5,7 +5,7 @@ import { SiGmail } from 'react-icons/si';
 import './Footer.css';
 
 const Footer = () => (
-  <footer className="text-center text-lg-start bg-dark text-muted">
+  <footer className="text-center text-lg-start bg-dark text-muted shadow-lg">
     <section className="">
       <div className="container text-center text-md-start mt-5">
         <div className="row mt-3">

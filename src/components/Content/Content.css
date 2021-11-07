@@ -3,15 +3,3 @@
     height: auto;
     padding: 20px;
 }
-
-
-.slideshow{
-    margin-bottom: 3%;
-    padding: 2%;
-}
-
-.slideshow img{
-    width: 50%;
-    margin-left: 25%;
-    box-shadow: 0 0 5px 0 rgba(51, 51, 51, 0.678);
-}
